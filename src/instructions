@@ -1,32 +1,34 @@
 
-Input/Output:
 
-Once you have completed coding your classes you should then use the following code in your main class to test your code and for correct output. This way you can be sure that your code works before pasting your five classes into the code evaluator.
+Example input:
 
-Wall wall1 = new Wall("West");
-Wall wall2 = new Wall("East");
-Wall wall3 = new Wall("South");
-Wall wall4 = new Wall("North");
- 
-Ceiling ceiling = new Ceiling(12, 55);
- 
-Bed bed = new Bed("Modern", 4, 3, 2, 1);
- 
-Lamp lamp = new Lamp("Classic", false, 75);
- 
-Bedroom bedRoom = new Bedroom("YOUR NAME HERE", wall1, wall2, wall3, wall4, ceiling,bed, lamp);
-bedRoom.makeBed();
- 
-bedRoom.getLamp().turnOn();
+Printer printer = new Printer(50, true);
+System.out.println(printer.addToner(50));
+System.out.println("initial page count = " +printer.getPagesPrinted());
+int pagesPrinted = printer.printPages(4);
+System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
+pagesPrinted = printer.printPages(2);
+System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
+Example output:
+
+100
+initial page count = 0
+Printing in duplex mode
+Pages printed was 2 new total print count for printer = 2
+Printing in duplex mode
+Pages printed was 1 new total print count for printer = 3
 Tips:
 
-Remember that after testing you will not put your main method into the code evaluator.
- You will only paste in your five classes you have created in the exercise.
+Remember to only paste the code from Printer class into the exercise evaluator.
+The Main class does not need to be pasted in.
 
-To be sure that the correct output is generated so your code passes the evaluation, use the following statements in your code:
+You can include a message in the printPages method which informs the user that the printer
+is printing in duplex mode if duplex is equal to "true" if you want.
 
-1) System.out.print("Bedroom -> Making bed | "); should be used in the makeBed() method of the Bedroom class;
+When calculating pagesToPrint if duplex is equal to "true"
+ remember that there are two operators which can help you with this.
+  The division "/" operator divides a number and returns only the quotient
+   without any remainder. And the modulo "%" operator divides the number and
+   returns only the remainder, whether 0 or otherwise.
 
-2) System.out.print("Bed -> Making | "); should be used in the make() method of the Bed class; and
-
-3) System.out.println("Lamp -> Turning on"); should be used in the turnOn() method of the Lamp class.
+  
